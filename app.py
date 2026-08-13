@@ -46,26 +46,23 @@ caudal = calcular_caudal_vogel(caudal_maximo, presion_yacimiento, presion_fondo,
 
 st.write("El caudal es:", caudal)
 
-elif  modulos == "POO": 
+
+elif modulos == "POO":
 
   class Pozo:
-  
     def __init__(self,nombre, campo, petroleo, agua):
       self.nombre = nombre
       self.campo = campo
       self.petroleo = petroleo
       self.agua = agua
-  
     def mostrar_informacion(self):
       print("Pozo:", self.nombre)
       print("Campo:", self.campo)
       print("Petroleo:", self.petroleo, "BPD")
       print("Agua:", self.agua, "BPD")
-  
     def produccion_total(self):
       total_produccion = self.petroleo + self.agua
       return total_produccion
-  
     def proyectar_produccion(self, dias=30):
       produccion_proyectada = (self.petroleo + self.agua)*dias
       return produccion_proyectada
