@@ -42,27 +42,30 @@ elif  modulos == "Funciones":
   presion_fondo = st.number_input("Ingrese la presion de fondo fluyente",min_value = 0, max_value = 9000, value =1500)
   decimales = st.slider("Seleccione la cantidad de decimales para su resultado",min_value = 0, max_value = 4, value =2)
 
-caudal = calcular_caudal_vogel(caudal_maximo, presion_yacimiento, presion_fondo, decimales)
+  caudal = calcular_caudal_vogel(caudal_maximo, presion_yacimiento, presion_fondo, decimales)
 
-st.write("El caudal es:", caudal)
+  st.write("El caudal es:", caudal)
 
-
-elif modulos == "POO":
+elif  modulos == "POO": 
 
   class Pozo:
+  
     def __init__(self,nombre, campo, petroleo, agua):
       self.nombre = nombre
       self.campo = campo
       self.petroleo = petroleo
       self.agua = agua
+  
     def mostrar_informacion(self):
       print("Pozo:", self.nombre)
       print("Campo:", self.campo)
       print("Petroleo:", self.petroleo, "BPD")
       print("Agua:", self.agua, "BPD")
+  
     def produccion_total(self):
       total_produccion = self.petroleo + self.agua
       return total_produccion
+  
     def proyectar_produccion(self, dias=30):
       produccion_proyectada = (self.petroleo + self.agua)*dias
       return produccion_proyectada
